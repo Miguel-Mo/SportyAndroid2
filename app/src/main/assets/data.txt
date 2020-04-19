@@ -1,0 +1,2 @@
+Caminar;2
+Correr;3

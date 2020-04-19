@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_corners"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvMinutos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="Minutos"
+            android:textSize="75px"
+            android:textColor="#F2F2F2" />
+
+        <EditText
+            android:id="@+id/etMinutos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="0"
+            android:textSize="75px"
+            android:textColor="#F2F2F2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/rounded_corners"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvKgs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="Kgs"
+            android:textSize="75px"
+            android:textColor="#F2F2F2"/>
+
+        <EditText
+            android:id="@+id/etKgs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="0"
+            android:textSize="75px"
+            android:textColor="#F2F2F2"/>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/cbEjercicios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_spinner"
+        android:spinnerMode="dialog"
+        android:visibility="visible"
+        android:textSize="75px"
+        android:textColor="#F2F2F2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/rounded_result"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvResultado_string"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="Resultado"
+            android:textSize="75px"
+            android:textColor="#F2F2F2"
+            />
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="0 Kcal"
+            android:textSize="75px"
+            android:textColor="#F2F2F2"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_button"
+        android:onClick="onCalcularClick"
+        android:text="Calcular"
+        android:textSize="100px"
+        android:textColor="#F2F2F2"/>
+
+</LinearLayout>
