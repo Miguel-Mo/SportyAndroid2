@@ -35,10 +35,10 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
             android:text="0"
             android:textSize="75px"
-            android:textColor="#F2F2F2"/>
+            android:textColor="#F2F2F2"
+            android:inputType="number"/>
 
     </LinearLayout>
 
@@ -59,7 +59,8 @@
             android:layout_margin="10dp"
             android:text="Kgs"
             android:textSize="75px"
-            android:textColor="#F2F2F2"/>
+            android:textColor="#F2F2F2"
+            />
 
         <EditText
             android:id="@+id/etKgs"
@@ -68,10 +69,10 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
             android:text="0"
             android:textSize="75px"
-            android:textColor="#F2F2F2"/>
+            android:textColor="#F2F2F2"
+            android:inputType="number"/>
 
     </LinearLayout>
 

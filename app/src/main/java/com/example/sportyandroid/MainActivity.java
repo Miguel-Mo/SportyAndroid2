@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -80,13 +81,28 @@ public class MainActivity extends AppCompatActivity {
         Float minutos;
         Float kgs;
         String descr;
+        String error="Se te ha olvidado insertar un dato";
 
-        minutos=Float.valueOf(((EditText)findViewById(R.id.etMinutos)).getText().toString());
-        kgs=Float.valueOf(((EditText)findViewById(R.id.etKgs)).getText().toString());
-        descr=((Spinner)findViewById(R.id.cbEjercicios)).getSelectedItem().toString();
 
-        tvResultado=findViewById(R.id.tvResultado);
-        tvResultado.setText(miControlador.calculaKCal(minutos,kgs,descr)+" Kcal");
+
+        try {
+            minutos=Float.valueOf(((EditText)findViewById(R.id.etMinutos)).getText().toString());
+            kgs=Float.valueOf(((EditText)findViewById(R.id.etKgs)).getText().toString());
+            descr=((Spinner)findViewById(R.id.cbEjercicios)).getSelectedItem().toString();
+
+            tvResultado=findViewById(R.id.tvResultado);
+            tvResultado.setText(miControlador.calculaKCal(minutos,kgs,descr)+" Kcal");
+
+        }catch (Exception i){
+            System.out.println(i);
+            Toast mensaje =Toast.makeText(this,error,Toast.LENGTH_LONG);
+            mensaje.show();
+        }
+
+
+
+
+
 
     }
 }
