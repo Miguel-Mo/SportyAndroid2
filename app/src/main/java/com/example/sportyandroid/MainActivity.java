@@ -1,7 +1,9 @@
 package com.example.sportyandroid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultado_string;
     private TextView resultado;
     private Button bCalcular;
+
+    private TextView NombreLogeado;
+    private TextView Resultado_reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,9 +103,24 @@ public class MainActivity extends AppCompatActivity {
             Toast mensaje =Toast.makeText(this,error,Toast.LENGTH_LONG);
             mensaje.show();
         }
+    }
 
 
+    public void onLoginClick(View view){
 
+            Intent myIntent = new Intent(this,LoginActivity.class);
+            startActivity(myIntent);
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        String user=miControlador.getUsuarioConectado();
+        String conexion=miControlador.getMensajeConexion();
+        NombreLogeado=findViewById(R.id.tvNombre_Reg);
+        NombreLogeado.setText(user);
+        Resultado_reg=findViewById(R.id.tvResultado_Reg);
+        Resultado_reg.setText(conexion);
 
 
 
