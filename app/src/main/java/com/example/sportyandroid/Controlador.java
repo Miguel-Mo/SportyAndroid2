@@ -5,6 +5,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -63,7 +65,7 @@ public class Controlador {
 
         //Cargamos datos del fichero
         cargarFichero();
-        cargarBaseUsuario();
+        //cargarBaseUsuario();
 
         //Introducimos en el JComboBox los datos
         for (int i=0;i<coleccionEj.size();i++) {
@@ -206,6 +208,50 @@ public class Controlador {
 
         }
 
+    }
+
+    public void cargarUsuario() throws FileNotFoundException {
+        //recibir informacion del archivo
+        InputStream is=myApp.getApplicationContext().openFileInput(LOGIN_FICHERO);
+
+        Scanner miScanner = new Scanner(is);
+
+        Usuarios usuarioNuevo;
+        String nuevaLinea;
+
+        while (miScanner.hasNextLine()) {
+            nuevaLinea = miScanner.nextLine();
+            usuarioNuevo = new Usuarios(nuevaLinea);
+            coleccionUs.addUsuario(usuarioNuevo);
+
+        }
+
+        miScanner.close();
+    }
+
+
+
+    public boolean hacerRegistro(String usuario,String password,String nombre,String apellidos,String dni, String email){
+
+        if (coleccionUs.comprobarRegistro(usuario)){
+            return false;
+        }
+        else {
+            Usuarios nuevoUsuario = new Usuarios(usuario,password,nombre,apellidos,dni,email);
+            coleccionUs.addUsuario(nuevoUsuario);
+            String nuevaLinea = nuevoUsuario.serializar();
+            File fichero = new File(myApp.getApplicationContext().getFilesDir(),LOGIN_FICHERO);
+            try {
+                FileWriter escritor = new FileWriter(fichero,true);
+                escritor.write(nuevaLinea+"\n");
+                escritor.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return true;
     }
 
 

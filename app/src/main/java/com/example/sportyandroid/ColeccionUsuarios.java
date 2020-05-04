@@ -47,5 +47,16 @@ public class ColeccionUsuarios {
             }
             return usuario;
         }
+
+    public boolean comprobarRegistro(String usuario) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getUsuario().compareTo(usuario)==0) {
+                return true;
+            }
+        }
+        return false;
+
     }
+
+}
 

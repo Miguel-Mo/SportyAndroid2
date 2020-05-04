@@ -34,13 +34,18 @@ public class LoginActivity extends AppCompatActivity {
 
 
       if (miControlador.TodoOk(usuario.getText().toString(),password.getText().toString())){
-
           finish();
       }else{
          //mensaje de error
           tvError.setText("se ha producido un error en el logeo" );
       }
   }
+
+
+    public void  onRegistrarOnClick(View view){
+        Intent myintent = new Intent(LoginActivity.this, NewUserActivity.class);
+        startActivity(myintent);
+    }
 
 
 
